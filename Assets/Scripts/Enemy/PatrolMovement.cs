@@ -10,6 +10,7 @@ public class PatrolMovement : MonoBehaviour
     private Transform[] _points;
     private int _currentPoint;
     private float _speed = 1f;
+    private bool _isFacingRight = false;
 
     private void Start()
     {
@@ -32,6 +33,20 @@ public class PatrolMovement : MonoBehaviour
 
             if (_currentPoint >= _points.Length)
                 _currentPoint = 0;
+            
+            Flip();
         }
+    }
+    
+    private void Flip()
+    {
+        _isFacingRight = !_isFacingRight;
+
+        Transform sprite = transform;
+        
+        Vector3 flippedScale = sprite.localScale;
+        
+        flippedScale.x *= -1;
+        sprite.localScale = flippedScale;
     }
 }
