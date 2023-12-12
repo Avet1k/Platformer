@@ -10,8 +10,6 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     private static readonly int IsRunning = Animator.StringToHash(nameof(IsRunning));
-    private static readonly int IsJumping = Animator.StringToHash(nameof(IsJumping));
-    private static readonly int IsFalling = Animator.StringToHash(nameof(IsFalling)); 
     private static readonly int IsGrounded = Animator.StringToHash(nameof(IsGrounded));
 
     private Animator _animator;
@@ -40,8 +38,11 @@ public class PlayerAnimator : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_rigidbody.velocity.y < -_velocityTolerance)
+            _animator.Play("Fall");
+        
         if (_rigidbody.velocity.x < _velocityTolerance
-            && _rigidbody.velocity.x > _velocityTolerance * -1)
+            && _rigidbody.velocity.x > -_velocityTolerance)
         {
             _animator.SetBool(IsRunning, false);
             
@@ -49,20 +50,16 @@ public class PlayerAnimator : MonoBehaviour
         }
 
         if (_rigidbody.velocity.x > _velocityTolerance)
-        {
             _renderer.flipX = false;
-        }
         else
-        {
             _renderer.flipX = true;
-        }
         
         _animator.SetBool(IsRunning, true);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.TryGetComponent(out Ground _) && transform.position.y > other.transform.position.y)
+        if (other.collider.TryGetComponent(out Ground _))
         {
             _animator.SetBool(IsGrounded, true);
         }

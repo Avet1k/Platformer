@@ -11,8 +11,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private ContactFilter2D _ground;
     
     private Rigidbody2D _rigidbody;
-    private float _speed = 1;
-    private float _jumpSpeed = 8;
+    private float _speed = 2;
+    private float _jumpSpeed = 7;
     private float _groundedDistance = 0.1f;
 
     public event UnityAction Jumped;
@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
     {
         float movingForward = Input.GetAxis("Horizontal");
 
-        _rigidbody.velocity = new Vector2(movingForward, _rigidbody.velocity.y);
+        _rigidbody.velocity = new Vector2(movingForward * _speed, _rigidbody.velocity.y);
     }
 
     private bool IsGrounded()
