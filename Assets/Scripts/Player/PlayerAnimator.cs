@@ -41,8 +41,7 @@ public class PlayerAnimator : MonoBehaviour
         if (_rigidbody.velocity.y < -_velocityTolerance)
             _animator.Play("Fall");
         
-        if (_rigidbody.velocity.x < _velocityTolerance
-            && _rigidbody.velocity.x > -_velocityTolerance)
+        if (Math.Abs(_rigidbody.velocity.x) < _velocityTolerance)
         {
             _animator.SetBool(IsRunning, false);
             
