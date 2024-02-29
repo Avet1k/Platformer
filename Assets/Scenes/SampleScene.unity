@@ -1230,7 +1230,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1633250654}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f3a1b01e1ed3580f0947247b0d11b060, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1294,7 +1294,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f3a1b01e1ed3580f0947247b0d11b060, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1924,6 +1924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 101883630627201399, guid: d795606d71933d06a8700855b48d92cb, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: f3a1b01e1ed3580f0947247b0d11b060, type: 2}
     - target: {fileID: 6848109946221019976, guid: d795606d71933d06a8700855b48d92cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.085
@@ -1964,6 +1968,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7414665989892077689, guid: d795606d71933d06a8700855b48d92cb, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: f3a1b01e1ed3580f0947247b0d11b060, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
