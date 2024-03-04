@@ -9,6 +9,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     private static readonly int IsRunning = Animator.StringToHash(nameof(IsRunning));
     private static readonly int IsGrounded = Animator.StringToHash(nameof(IsGrounded));
+    private static readonly int Fall = Animator.StringToHash(nameof(Fall));
 
     private Animator _animator;
     private Rigidbody2D _rigidbody;
@@ -37,7 +38,7 @@ public class PlayerAnimator : MonoBehaviour
     private void FixedUpdate()
     {
         if (_rigidbody.velocity.y < -_velocityTolerance)
-            _animator.Play("Fall");
+            _animator.Play(Fall);
         
         if (Math.Abs(_rigidbody.velocity.x) < _velocityTolerance)
         {
