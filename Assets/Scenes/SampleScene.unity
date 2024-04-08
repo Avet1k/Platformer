@@ -354,6 +354,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &638311893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2043972755129165012, guid: 3e333c67fc860b8189b06b95eeb2d59b, type: 3}
+  m_PrefabInstance: {fileID: 5562948773088628221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &638311894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638311893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ecf65b2d16fec318d66c4a2ff07af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+--- !u!114 &638311899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2026769213999845903, guid: 3e333c67fc860b8189b06b95eeb2d59b, type: 3}
+  m_PrefabInstance: {fileID: 5562948773088628221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638311893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc185bc4e6f3495298b7b36082d5149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1375851518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2882603101243049452, guid: 3e333c67fc860b8189b06b95eeb2d59b, type: 3}
+      propertyPath: _current
+      value: 
+      objectReference: {fileID: 638311899}
     - target: {fileID: 5147322844859044006, guid: 3e333c67fc860b8189b06b95eeb2d59b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1910,7 +1956,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2043972755129165012, guid: 3e333c67fc860b8189b06b95eeb2d59b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 638311894}
   m_SourcePrefab: {fileID: 100100000, guid: 3e333c67fc860b8189b06b95eeb2d59b, type: 3}
 --- !u!1001 &7102385323454487579
 PrefabInstance:
@@ -1923,6 +1972,10 @@ PrefabInstance:
     - target: {fileID: 16756641908136795, guid: d795606d71933d06a8700855b48d92cb, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 16756641908136795, guid: d795606d71933d06a8700855b48d92cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 101883630627201399, guid: d795606d71933d06a8700855b48d92cb, type: 3}
       propertyPath: m_Material

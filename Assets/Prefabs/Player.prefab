@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5358007015792446299}
   - component: {fileID: -6638440493537578004}
   - component: {fileID: 167188561484651639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f3a1b01e1ed3580f0947247b0d11b060, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 16756641908136795}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f3a1b01e1ed3580f0947247b0d11b060, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

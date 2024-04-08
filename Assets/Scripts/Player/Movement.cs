@@ -33,9 +33,9 @@ public class Movement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D[] grounds = new RaycastHit2D[1];
+        RaycastHit2D[] results = new RaycastHit2D[1];
 
-        int hits = _rigidbody.Cast(Vector2.down, _ground, grounds, _groundedDistance);
+        int hits = _rigidbody.Cast(Vector2.down, _ground, results, _groundedDistance);
 
         return hits > 0;
     }

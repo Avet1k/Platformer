@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 1351203854369838305}
   - component: {fileID: 494321194456218815}
   - component: {fileID: 8166905845815673359}
+  - component: {fileID: 4317915059280136564}
+  - component: {fileID: 2882603101243049452}
+  - component: {fileID: 7955144710043242921}
+  - component: {fileID: 2069008318029606406}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -127,7 +131,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 5
 --- !u!61 &494321194456218815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194,3 +198,66 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4317915059280136564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043972755129165012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bdcae931226d7d0878d17150bfff2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2882603101243049452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043972755129165012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8123e263112ed74b5bc8e62d30a18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _current: {fileID: 2026769213999845903}
+--- !u!114 &7955144710043242921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043972755129165012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ecf65b2d16fec318d66c4a2ff07af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+--- !u!114 &2069008318029606406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043972755129165012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81abccdedfe9267538cdeca6b1b79feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
