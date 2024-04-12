@@ -3,7 +3,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Movement))]
 public class PlayerAnimator : MonoBehaviour
 {
@@ -14,7 +13,6 @@ public class PlayerAnimator : MonoBehaviour
 
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    private SpriteRenderer _renderer;
     private Movement _movement;
     private float _velocityTolerance = 0.1f;
 
@@ -22,7 +20,6 @@ public class PlayerAnimator : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _renderer = GetComponent<SpriteRenderer>();
         _movement = GetComponent<Movement>();
     }
 
@@ -47,11 +44,6 @@ public class PlayerAnimator : MonoBehaviour
             
             return;
         }
-
-        if (_rigidbody.velocity.x > _velocityTolerance)
-            _renderer.flipX = false;
-        else
-            _renderer.flipX = true;
         
         _animator.SetBool(IsRunning, true);
     }

@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: -6638440493537578004}
   - component: {fileID: 167188561484651639}
   - component: {fileID: 8740223972551440662}
+  - component: {fileID: 8050338719787245135}
+  - component: {fileID: 3374966832853288115}
+  - component: {fileID: 3135097979684333465}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -79,8 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664,
-    type: 3}
+  m_Sprite: {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,3 +226,43 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &8050338719787245135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16756641908136795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ef992867b07fa8a862a743ab8d70bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3374966832853288115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16756641908136795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a9a02a2840017949bcb1d7bccfc57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: {fileID: 5944361686086119062, guid: 67453003d27f56a338a616b7cee4728e, type: 3}
+--- !u!114 &3135097979684333465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16756641908136795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759999abfa5d7bbba98c61b1c793571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _damage: 20
+  _cooldown: 0

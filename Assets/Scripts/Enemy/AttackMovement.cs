@@ -1,9 +1,10 @@
-using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 [RequireComponent(typeof(EnemyMovement))]
 public class AttackMovement : State
 {
+    private Enemy _enemy;
     private EnemyMovement _enemyMovement;
     private Transform _target;
     private float _speed = 3f;
@@ -16,8 +17,18 @@ public class AttackMovement : State
 
     protected override void OnAwake()
     {
+        _enemy = GetComponent<Enemy>();
         _enemyMovement = GetComponent<EnemyMovement>();
         _target = transform;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.TryGetComponent(out Player player))
+        {
+            player.TakeDamage(_enemy.GetDamage());
+            Debug.Log("Здоровье игрока: " + player.GetHealth());
+        }
     }
 
     public void SetTarget(Transform target)

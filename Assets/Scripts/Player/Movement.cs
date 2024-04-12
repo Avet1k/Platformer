@@ -29,6 +29,11 @@ public class Movement : MonoBehaviour
         float movingForward = Input.GetAxis("Horizontal");
 
         _rigidbody.velocity = new Vector2(movingForward * _speed, _rigidbody.velocity.y);
+
+        if (movingForward > 0)
+            transform.localRotation = Quaternion.identity;
+        else if (movingForward < 0)
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
     }
 
     private bool IsGrounded()

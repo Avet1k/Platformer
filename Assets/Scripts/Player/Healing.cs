@@ -1,7 +1,8 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CollectingItems))]
-public class Health : MonoBehaviour
+[RequireComponent(typeof(Player))]
+public class Healing : MonoBehaviour
 {
     private int _maxHealth = 100;
     private int _currentHealth;
@@ -31,6 +32,6 @@ public class Health : MonoBehaviour
         if (_currentHealth > _maxHealth)
             _currentHealth = _maxHealth;
         
-        Debug.Log(_currentHealth);
+        Debug.Log("Здоровье игрока: " + _currentHealth);
     }
 }
