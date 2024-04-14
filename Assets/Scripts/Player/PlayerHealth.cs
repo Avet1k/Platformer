@@ -2,10 +2,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(CollectingItems))]
 [RequireComponent(typeof(Player))]
-public class Healing : MonoBehaviour
+public class PlayerHealth : Health
 {
-    private int _maxHealth = 100;
-    private int _currentHealth;
+    private int _maxHealth;
     private int _healthToAdd = 20;
     private CollectingItems _collectingItems;
 
@@ -21,17 +20,12 @@ public class Healing : MonoBehaviour
 
     private void Awake()
     {
-        _currentHealth = _maxHealth;
+        _maxHealth = HealthPoints;
         _collectingItems = GetComponent<CollectingItems>();
     }
 
     private void AddHealthPoints()
     {
-        _currentHealth += _healthToAdd;
-
-        if (_currentHealth > _maxHealth)
-            _currentHealth = _maxHealth;
-        
-        Debug.Log("Здоровье игрока: " + _currentHealth);
+        HealthPoints = Mathf.Clamp(HealthPoints + _healthToAdd, 0, _maxHealth);
     }
 }

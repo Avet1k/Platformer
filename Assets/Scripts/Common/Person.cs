@@ -1,21 +1,21 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Health))]
 public class Person : MonoBehaviour
 {
-    [SerializeField] private int _health;
-    [SerializeField] private int _damage;
-    [SerializeField] private float _cooldown;
-
-    public int GetHealth() => _health;
-    public int GetDamage() => _damage;
-    public float GetCooldown() => _cooldown;
+    private Health _health;
     
+    public int Damage { get; private set; }
+
+    private void Awake()
+    {
+        _health = GetComponent<Health>();
+    }
+
     public void TakeDamage(int damage)
     {
-        _health -= damage;
-
-        if (_health < 0)
-            Destroy(gameObject);
+        _health.ReduceHealthPoints(damage);
     }
 }

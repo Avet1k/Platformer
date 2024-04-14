@@ -1,19 +1,19 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Person))]
+[RequireComponent(typeof(Player))]
 public class Attacking : MonoBehaviour
 {
     [SerializeField] private Attack _attack;
 
-    private Person _person;
+    private Player _player;
     private float _cooldown;
     private float _currentTimer;
     private float _offset = 2f;
     
     private void Awake()
     {
-        _person = GetComponent<Person>();
-        _cooldown = _person.GetCooldown();
+        _player = GetComponent<Player>();
+        _cooldown = _player.Cooldown;
         _currentTimer = _cooldown;
     }
 
@@ -26,7 +26,7 @@ public class Attacking : MonoBehaviour
         {
             Vector3 attackPosition = transform.position + transform.right * _offset;
             var attack = Instantiate(_attack, attackPosition, Quaternion.identity, transform);
-            attack.SetDamage(_person.GetDamage());
+            attack.SetDamage(_player.Damage);
             attack.transform.parent = null;
             _currentTimer = 0;
         }

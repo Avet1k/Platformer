@@ -26,8 +26,7 @@ public class AttackMovement : State
     {
         if (other.transform.TryGetComponent(out Player player))
         {
-            player.TakeDamage(_enemy.GetDamage());
-            Debug.Log("Здоровье игрока: " + player.GetHealth());
+            player.TakeDamage(_enemy.Damage);
         }
     }
 
