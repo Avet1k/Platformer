@@ -4,7 +4,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class CollectingItems : MonoBehaviour
 {
-    public event UnityAction CherryPicked;
+    public event UnityAction<int> CherryPicked;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,9 +12,9 @@ public class CollectingItems : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-        else if (other.TryGetComponent(out Cherry _))
+        else if (other.TryGetComponent(out Cherry cherry))
         {
-            CherryPicked?.Invoke();
+            CherryPicked?.Invoke(cherry.PointsToHeal);
             Destroy(other.gameObject);
         }
     }

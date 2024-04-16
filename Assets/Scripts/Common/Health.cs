@@ -3,13 +3,24 @@ using UnityEngine;
 [RequireComponent(typeof(Person))]
 public class Health : MonoBehaviour
 {
-    public int HealthPoints { get; protected set; }
+    [SerializeField] private int _maxPoints;
+    public int Points { get; private set; }
 
-    public void ReduceHealthPoints(int damage)
+    private void Awake()
     {
-        HealthPoints -= damage;
+        Points = _maxPoints;
+    }
 
-        if (HealthPoints < 0)
+    public void Add(int points)
+    {
+        Points = Mathf.Clamp(Points + points, 0, _maxPoints);
+    }
+    
+    public void Reduce(int points)
+    {
+        Points -= points;
+
+        if (Points < 0)
             Destroy(gameObject);
     }
 }

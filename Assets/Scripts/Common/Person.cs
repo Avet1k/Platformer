@@ -5,17 +5,20 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class Person : MonoBehaviour
 {
-    private Health _health;
+    [SerializeField] private int _damage;
+    
+    protected Health Health;
     
     public int Damage { get; private set; }
 
     private void Awake()
     {
-        _health = GetComponent<Health>();
+        Damage = _damage;
+        Health = GetComponent<Health>();
+        OnAwake();
     }
 
-    public void TakeDamage(int damage)
+    protected virtual void OnAwake()
     {
-        _health.ReduceHealthPoints(damage);
     }
 }
