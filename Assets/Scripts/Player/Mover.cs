@@ -2,18 +2,21 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Movement : MonoBehaviour
+public class Mover : MonoBehaviour
 {
-    [SerializeField] private ContactFilter2D _ground;
+    private const string MovingAxis = "Horizontal";
+    private const int HalfTurn = 180;
     
+    [SerializeField] private ContactFilter2D _ground;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _jumpSpeed;
+
     private Rigidbody2D _rigidbody;
-    private float _speed = 2;
-    private float _jumpSpeed = 7;
     private float _groundedDistance = 0.1f;
 
     public event UnityAction Jumped;
     
-    private void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -26,14 +29,14 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float movingForward = Input.GetAxis("Horizontal");
+        float movingForward = Input.GetAxis(MovingAxis);
 
         _rigidbody.velocity = new Vector2(movingForward * _speed, _rigidbody.velocity.y);
 
         if (movingForward > 0)
             transform.localRotation = Quaternion.identity;
         else if (movingForward < 0)
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            transform.localRotation = Quaternion.Euler(0, HalfTurn, 0);
     }
 
     private bool IsGrounded()

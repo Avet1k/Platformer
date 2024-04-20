@@ -2490,10 +2490,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3135097979684333465, guid: d795606d71933d06a8700855b48d92cb, type: 3}
-      propertyPath: _cooldown
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 6848109946221019976, guid: d795606d71933d06a8700855b48d92cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.085

@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(Mover))]
 public class PlayerAnimator : MonoBehaviour
 {
     private static readonly int IsRunning = Animator.StringToHash(nameof(IsRunning));
@@ -13,24 +13,24 @@ public class PlayerAnimator : MonoBehaviour
 
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    private Movement _movement;
+    private Mover _mover;
     private float _velocityTolerance = 0.1f;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _movement = GetComponent<Movement>();
+        _mover = GetComponent<Mover>();
     }
 
     private void OnEnable()
     {
-        _movement.Jumped += PlayJump;
+        _mover.Jumped += PlayJump;
     }
 
     private void OnDisable()
     {
-        _movement.Jumped -= PlayJump;
+        _mover.Jumped -= PlayJump;
     }
 
     private void FixedUpdate()

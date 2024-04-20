@@ -3,11 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(CollectingItems))]
 public class Player : Person, IDamagable, IHealable
 {
-    [SerializeField] private float _cooldown;
-    
     private CollectingItems _collectingItems;
-    
-    public float Cooldown { get; private set; }
 
     private void OnEnable()
     {
@@ -17,12 +13,6 @@ public class Player : Person, IDamagable, IHealable
     private void OnDisable()
     {
         _collectingItems.CherryPicked -= Heal;
-    }
-
-    protected override void OnAwake()
-    {
-        Cooldown = _cooldown;
-        _collectingItems = GetComponent<CollectingItems>();
     }
     
     public void TakeDamage(int damage)
@@ -35,5 +25,10 @@ public class Player : Person, IDamagable, IHealable
     {
         Health.Add(points);
         Debug.Log("Здоровье игрока повысилось до " + Health.Points);
+    }
+    
+    protected override void OnAwake()
+    {
+        _collectingItems = GetComponent<CollectingItems>();
     }
 }

@@ -167,6 +167,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  _speed: 2
+  _jumpSpeed: 7
 --- !u!114 &-6638440493537578004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a9a02a2840017949bcb1d7bccfc57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attack: {fileID: 5944361686086119062, guid: 67453003d27f56a338a616b7cee4728e, type: 3}
+  _blast: {fileID: 5944361686086119062, guid: 67453003d27f56a338a616b7cee4728e, type: 3}
+  _damage: 40
+  _size: 0.1
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _cooldown: 0.4
 --- !u!114 &3135097979684333465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,8 +259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c759999abfa5d7bbba98c61b1c793571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 40
-  _cooldown: 0.4
 --- !u!114 &8899952501818971170
 MonoBehaviour:
   m_ObjectHideFlags: 0

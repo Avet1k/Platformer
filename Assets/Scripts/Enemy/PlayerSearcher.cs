@@ -1,22 +1,22 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PatrolMovement))]
-[RequireComponent(typeof(AttackMovement))]
-[RequireComponent(typeof(StateMachine))]
+[RequireComponent(typeof(PatrolState)),
+ RequireComponent(typeof(AttackState)),
+ RequireComponent(typeof(StateMachine))]
 public class PlayerSearcher : MonoBehaviour
 {
     [SerializeField] private ContactFilter2D _player;
     
     private bool _isDetected;
     private float _viewDistance = 4f;
-    private PatrolMovement _patrolMovement;
-    private AttackMovement _attackMovement;
+    private PatrolState _patrolState;
+    private AttackState _attackState;
     private StateMachine _stateMachine;
 
     private void Awake()
     {
-        _patrolMovement = GetComponent<PatrolMovement>();
-        _attackMovement = GetComponent<AttackMovement>();
+        _patrolState = GetComponent<PatrolState>();
+        _attackState = GetComponent<AttackState>();
         _stateMachine = GetComponent<StateMachine>();
     }
 
@@ -30,13 +30,13 @@ public class PlayerSearcher : MonoBehaviour
         if (_isDetected == false && hits > 0)
         {
             _isDetected = true;
-            _attackMovement.SetTarget(results[0].transform);
-            _stateMachine.ChangeState(_attackMovement);
+            _attackState.SetTarget(results[0].transform);
+            _stateMachine.ChangeState(_attackState);
         }
         else if (_isDetected && hits == 0)
         {
             _isDetected = false;
-            _stateMachine.ChangeState(_patrolMovement);
+            _stateMachine.ChangeState(_patrolState);
         }
     }
 }

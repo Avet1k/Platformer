@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 2286195302426490115}
   - component: {fileID: 2069008318029606406}
   - component: {fileID: 1650360859806453200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b566033bece164b78db4dc34496347f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 55
 --- !u!114 &2069008318029606406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81abccdedfe9267538cdeca6b1b79feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 55
 --- !u!114 &1650360859806453200
 MonoBehaviour:
   m_ObjectHideFlags: 0

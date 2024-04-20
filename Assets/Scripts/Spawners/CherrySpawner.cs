@@ -42,7 +42,5 @@ public class CherrySpawner : MonoBehaviour
 
             yield return cooldown;
         }
-        
-        
     }
 }

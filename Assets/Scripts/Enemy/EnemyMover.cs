@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMover : MonoBehaviour
 {
     private bool _isFacingRight;
     private Transform _target;
@@ -35,6 +35,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Flip()
     {
-        transform.localRotation *= Quaternion.Euler(0, 180, 0);
+        int halfTurn = 180;
+        
+        transform.localRotation *= Quaternion.Euler(0, halfTurn, 0);
     }
 }
