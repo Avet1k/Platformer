@@ -21,12 +21,6 @@ public class Mover : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-            Jump();
-    }
-
     private void FixedUpdate()
     {
         float movingForward = Input.GetAxis(MovingAxis);
@@ -39,6 +33,12 @@ public class Mover : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, HalfTurn, 0);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            Jump();
+    }
+    
     private bool IsGrounded()
     {
         RaycastHit2D[] results = new RaycastHit2D[1];
