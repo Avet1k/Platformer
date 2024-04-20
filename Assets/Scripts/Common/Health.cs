@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
         
         Points = Mathf.Clamp(Points - points, 0, _maxPoints);
         
-        if (Points < 0)
+        if (Points <= 0)
             Destroy(gameObject);
     }
 }
