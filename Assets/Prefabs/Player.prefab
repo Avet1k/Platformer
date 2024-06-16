@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8740223972551440662}
   - component: {fileID: 3374966832853288115}
   - component: {fileID: 3135097979684333465}
-  - component: {fileID: 8899952501818971170}
+  - component: {fileID: 6039744428676891129}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -243,10 +243,10 @@ MonoBehaviour:
   _blast: {fileID: 5944361686086119062, guid: 67453003d27f56a338a616b7cee4728e, type: 3}
   _damage: 40
   _size: 0.1
+  _cooldown: 0.4
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
-  _cooldown: 0.4
 --- !u!114 &3135097979684333465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c759999abfa5d7bbba98c61b1c793571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8899952501818971170
+--- !u!114 &6039744428676891129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 16756641908136795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1901f15d8d5a76707ab9553ba8c090f0, type: 3}
+  m_Script: {fileID: 11500000, guid: d0df4764462c92f2e95d33538bb3a5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPoints: 100
+  <MaxPoints>k__BackingField: 100

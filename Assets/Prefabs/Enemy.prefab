@@ -285,7 +285,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043972755129165012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1901f15d8d5a76707ab9553ba8c090f0, type: 3}
+  m_Script: {fileID: 11500000, guid: d0df4764462c92f2e95d33538bb3a5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPoints: 100
+  <MaxPoints>k__BackingField: 100
