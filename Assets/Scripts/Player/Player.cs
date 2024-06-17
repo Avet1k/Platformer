@@ -8,23 +8,28 @@ public class Player : Person, IDamagable, IHealable
     private void OnEnable()
     {
         _collectingItems.CherryPicked += Heal;
+        Health.OutOfPoints += Die;
     }
 
     private void OnDisable()
     {
         _collectingItems.CherryPicked -= Heal;
+        Health.OutOfPoints -= Die;
     }
     
     public void TakeDamage(int damage)
     {
         Health.Reduce(damage);
-        Debug.Log("Здоровье игрока уменьшилось до " + Health.Points);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
     public void Heal(int points)
     {
         Health.Add(points);
-        Debug.Log("Здоровье игрока повысилось до " + Health.Points);
     }
     
     protected override void OnAwake()

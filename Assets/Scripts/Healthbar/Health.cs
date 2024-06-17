@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     public event UnityAction Changed;
+    public event UnityAction OutOfPoints;
     
     [field: SerializeField] public int MaxPoints { get; private set; }
     
@@ -33,5 +33,8 @@ public class Health : MonoBehaviour
         Points = Mathf.Clamp(Points - points, 0, MaxPoints);
         
         Changed?.Invoke();
+        
+        if (Points <= 0)
+            OutOfPoints?.Invoke();
     }
 }

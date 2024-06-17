@@ -37,7 +37,12 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (_rigidbody.velocity.y < -_velocityTolerance)
             _animator.Play(Fall);
-        
+
+        if (_rigidbody.velocity.y == 0)
+        {
+            _animator.SetBool(IsGrounded, true);
+        }
+
         if (Math.Abs(_rigidbody.velocity.x) < _velocityTolerance)
         {
             _animator.SetBool(IsRunning, false);
@@ -46,14 +51,6 @@ public class PlayerAnimator : MonoBehaviour
         }
         
         _animator.SetBool(IsRunning, true);
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.collider.TryGetComponent(out Ground _))
-        {
-            _animator.SetBool(IsGrounded, true);
-        }
     }
 
     private void PlayJump()

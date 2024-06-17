@@ -44,7 +44,7 @@ public class Mover : MonoBehaviour
         RaycastHit2D[] results = new RaycastHit2D[1];
 
         int hits = _rigidbody.Cast(Vector2.down, _ground, results, _groundedDistance);
-
+        
         return hits > 0;
     }
 
