@@ -7,6 +7,7 @@ public class Attacker : MonoBehaviour
     [SerializeField] private float _size;
     [SerializeField] private float _cooldown;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private PlayerBody _playerBody;
     
     private float _currentTimer;
     private float _offset = 2f;
@@ -23,7 +24,7 @@ public class Attacker : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.J) && _currentTimer >= _cooldown)
         {
-            Vector3 attackPosition = transform.position + transform.right * _offset;
+            Vector3 attackPosition = _playerBody.transform.position + transform.right * _offset;
             var blast = Instantiate(_blast, attackPosition, Quaternion.identity, transform);
             blast.transform.parent = null;
             _currentTimer = 0;
@@ -38,7 +39,6 @@ public class Attacker : MonoBehaviour
         if (result is not null && result.transform.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(_damage);
-            Debug.Log("Игрок нанес урона: " + _damage);
         }
     }
 }

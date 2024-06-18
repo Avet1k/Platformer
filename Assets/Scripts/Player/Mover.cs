@@ -10,6 +10,7 @@ public class Mover : MonoBehaviour
     [SerializeField] private ContactFilter2D _ground;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpSpeed;
+    [SerializeField] private PlayerBody _playerBody;
 
     private Rigidbody2D _rigidbody;
     private float _groundedDistance = 0.1f;
@@ -28,9 +29,9 @@ public class Mover : MonoBehaviour
         _rigidbody.velocity = new Vector2(movingForward * _speed, _rigidbody.velocity.y);
 
         if (movingForward > 0)
-            transform.localRotation = Quaternion.identity;
+            _playerBody.transform.localRotation = Quaternion.identity;
         else if (movingForward < 0)
-            transform.localRotation = Quaternion.Euler(0, HalfTurn, 0);
+            _playerBody.transform.localRotation = Quaternion.Euler(0, HalfTurn, 0);
     }
 
     private void Update()
