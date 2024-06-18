@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
+    [SerializeField] private EnemyBody _enemyBody;
+    
     private bool _isFacingRight;
     private Transform _target;
     private float _speed;
@@ -37,6 +39,6 @@ public class EnemyMover : MonoBehaviour
     {
         int halfTurn = 180;
         
-        transform.localRotation *= Quaternion.Euler(0, halfTurn, 0);
+        _enemyBody.transform.localRotation *= Quaternion.Euler(0, halfTurn, 0);
     }
 }

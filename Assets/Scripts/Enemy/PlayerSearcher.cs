@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerSearcher : MonoBehaviour
 {
     [SerializeField] private ContactFilter2D _player;
+    [SerializeField] private EnemyBody _enemyBody;
     
     private bool _isDetected;
     private float _viewDistance = 4f;
@@ -24,8 +25,8 @@ public class PlayerSearcher : MonoBehaviour
     {
         RaycastHit2D[] results = new RaycastHit2D[1];
         
-        int hits = Physics2D.Raycast(transform.position, -transform.right, _player, results, 
-            _viewDistance);
+        int hits = Physics2D.Raycast(_enemyBody.transform.position, -_enemyBody.transform.right,
+            _player, results, _viewDistance);
 
         if (_isDetected == false && hits > 0)
         {

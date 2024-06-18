@@ -24,7 +24,7 @@ public class Attacker : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.J) && _currentTimer >= _cooldown)
         {
-            Vector3 attackPosition = _playerBody.transform.position + transform.right * _offset;
+            Vector3 attackPosition = _playerBody.transform.position + _playerBody.transform.right * _offset;
             var blast = Instantiate(_blast, attackPosition, Quaternion.identity, transform);
             blast.transform.parent = null;
             _currentTimer = 0;
