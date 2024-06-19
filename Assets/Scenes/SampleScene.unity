@@ -995,7 +995,7 @@ MonoBehaviour:
   _cooldown: 10
   _duration: 5
   _tickrate: 2
-  _radius: 0
+  _radius: 2
   _contactFilter:
     useTriggers: 0
     useLayerMask: 1
